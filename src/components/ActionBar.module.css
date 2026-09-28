@@ -1,0 +1,212 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0.5rem 0.75rem;
+  padding: 0.5rem max(0.6rem, env(safe-area-inset-left)) max(0.6rem, env(safe-area-inset-bottom));
+  border-top: 1px solid rgb(255 255 255 / 0.1);
+  background: rgb(10 4 18 / 0.35);
+}
+
+.purse {
+  display: grid;
+  align-content: center;
+  min-width: 6.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #ffe28a;
+}
+
+.coin {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fff4c2, #f0b93c);
+  box-shadow: 0 0 0.5rem rgb(255 210 110 / 0.6);
+}
+
+.xp {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.group {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.unit,
+.action {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 3.25rem;
+  padding: 0.3rem 0.7rem 0.3rem 0.4rem;
+  border-radius: 0.7rem;
+  background: rgb(255 255 255 / 0.07);
+  box-shadow: inset 0 0 0 1px var(--border);
+  text-align: left;
+  overflow: hidden;
+}
+
+.unit:hover,
+.action:hover,
+.unit:focus-visible,
+.action:focus-visible {
+  background: rgb(255 255 255 / 0.15);
+}
+
+.unit[aria-disabled='true'],
+.action[aria-disabled='true'] {
+  opacity: 0.5;
+}
+
+.label {
+  display: grid;
+  line-height: 1.2;
+}
+
+.name {
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cost {
+  font-size: 0.8rem;
+  color: #ffe28a;
+  font-variant-numeric: tabular-nums;
+}
+
+.icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-left: 0.3rem;
+  flex: none;
+}
+
+.key {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.3rem;
+  font-family: inherit;
+  font-size: 0.65rem;
+  color: rgb(255 255 255 / 0.6);
+}
+
+/* Touch screens have no keys to hint at. */
+@media (hover: none) {
+  .key {
+    display: none;
+  }
+}
+
+/* A fill that rises with --fill: special recharge, XP toward the next era. */
+.meter::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgb(255 255 255 / 0.12);
+  transform: scaleX(var(--fill, 0));
+  transform-origin: left;
+  pointer-events: none;
+}
+
+.meter[data-ready] {
+  background: rgb(255 255 255 / 0.2);
+  box-shadow:
+    inset 0 0 0 1px #fff,
+    0 0 1rem var(--glow);
+  opacity: 1;
+}
+
+.meter[data-ready] .cost {
+  color: #fff;
+}
+
+.queue {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.order,
+.empty {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 0.45rem;
+  overflow: hidden;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.order {
+  background: rgb(255 255 255 / 0.12);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.order::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgb(255 255 255 / 0.35);
+  transform: scaleY(var(--fill, 0));
+  transform-origin: bottom;
+}
+
+.order span {
+  position: relative;
+}
+
+.order:hover,
+.order:focus-visible {
+  background: rgb(255 120 120 / 0.35);
+}
+
+.empty {
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.12);
+}
+
+@media (max-width: 40rem) {
+  .bar {
+    gap: 0.4rem;
+  }
+
+  .purse {
+    order: -1;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .group {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .unit,
+  .action {
+    min-height: 2.9rem;
+    padding-right: 0.55rem;
+  }
+
+  .name {
+    font-size: 0.78rem;
+  }
+}

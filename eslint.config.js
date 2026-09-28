@@ -28,6 +28,8 @@ export default defineConfig([
     },
     rules: {
       '@typescript-eslint/restrict-template-expressions': ['error', { allowNumber: true }],
+      // Card-style radio labels keep their text a level deeper than the default looks.
+      'jsx-a11y/label-has-associated-control': ['error', { depth: 3 }],
     },
   },
   {

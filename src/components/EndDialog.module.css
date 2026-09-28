@@ -1,0 +1,35 @@
+.summary {
+  margin: 0 0 1.1rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.record {
+  color: #ffe28a;
+  font-weight: 500;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4rem;
+  margin: 0 0 1.3rem;
+}
+
+.stats div {
+  padding: 0.55rem 0.6rem;
+  border-radius: 0.6rem;
+  background: rgb(0 0 0 / 0.2);
+}
+
+.stats dt {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.stats dd {
+  margin: 0.15rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}

@@ -7,8 +7,5 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="url(#bg)"/>
-  <g transform="translate(0 0) scale(1)" fill="none" stroke="#fff" stroke-linecap="round">
-    <path d="M9 29c7-9 15-9 22-2s15 7 24-3" stroke-width="4.5"/>
-    <path d="M9 38c7-7 15-7 22-1.5s15 5.5 24-2.5" stroke-width="2.5" opacity=".55"/>
-  </g>
+  <g transform="translate(12.16 12.16) scale(1.6533333333333333)" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m13 19 6-6"/><path d="M14.5 17.5 3.586 6.586A2 2 0 013 5.172V3h2.172a2 2 0 011.414.586L17.5 14.5"/><path d="m14.828 6.172 2.586-2.586A2 2 0 0118.828 3H21v2.172a2 2 0 01-.586 1.414l-2.586 2.586"/><path d="m16 16 4 4"/><path d="m19 21 2-2"/><path d="m5 14 4 4"/><path d="m5 21-2-2"/><path d="M7.5 16.5 4 20"/></g>
 </svg>

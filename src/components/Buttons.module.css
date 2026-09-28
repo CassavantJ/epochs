@@ -1,0 +1,48 @@
+.stack {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.primary,
+.secondary {
+  min-height: 2.8rem;
+  padding: 0 1.4rem;
+  border-radius: 999px;
+}
+
+.primary {
+  background: #fff;
+  color: #1a1026;
+  font-weight: 500;
+}
+
+.primary:hover,
+.primary:focus-visible {
+  box-shadow: 0 0 1rem var(--glow);
+}
+
+.secondary {
+  background: rgb(255 255 255 / 0.08);
+  box-shadow: inset 0 0 0 1px var(--border);
+}
+
+.secondary:hover,
+.secondary:focus-visible {
+  background: rgb(255 255 255 / 0.16);
+}
+
+.keys {
+  margin: 1.2rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.keys kbd {
+  padding: 0.05rem 0.35rem;
+  border-radius: 0.3rem;
+  background: rgb(255 255 255 / 0.12);
+  font-family: inherit;
+  font-size: 0.8rem;
+  color: var(--text);
+}
