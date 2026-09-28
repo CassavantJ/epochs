@@ -15,7 +15,7 @@ describe('view', () => {
   it('shows about two thirds of the lane on a computer, and pans', () => {
     const view = createView(1280, 560);
     expect(view.pans).toBe(true);
-    expect(view.span).toBeCloseTo(1100);
+    expect(view.span).toBeCloseTo(950);
   });
 
   it('pans on a narrow screen, keeping a readable stretch in view', () => {

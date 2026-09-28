@@ -11,7 +11,7 @@ export interface View {
   span: number;
   /** Whether the lane is wider than the screen, so the camera pans. */
   pans: boolean;
-  /** Top of the world on the canvas, in CSS pixels. */
+  /** Top of the world on the canvas, in CSS pixels; the ground sits at the bottom. */
   top: number;
   /** Left of the world on the canvas when not panning, in CSS pixels. */
   left: number;
@@ -21,7 +21,7 @@ export interface View {
  * How much lane to show: about two thirds on a computer, so units are big enough to read, and a
  * little less on a phone. Very wide screens fit the whole lane.
  */
-const DESKTOP_SPAN = 1100;
+const DESKTOP_SPAN = 950;
 const PHONE_SPAN = 520;
 
 export function createView(width: number, height: number): View {
@@ -33,7 +33,8 @@ export function createView(width: number, height: number): View {
     scale,
     span,
     pans,
-    top: Math.max(0, (height - WORLD.height * scale) / 2),
+    // Anchored to the bottom: spare height becomes sky, not a slab of dirt.
+    top: Math.max(0, height - WORLD.height * scale),
     left: pans ? 0 : (width - WORLD.width * scale) / 2,
   };
 }

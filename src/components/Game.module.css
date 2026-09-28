@@ -78,16 +78,16 @@
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: #c4ecff;
-  box-shadow: 0 0 0.5rem rgb(140 215 255 / 0.7);
+  background: #5c9dff;
+  box-shadow: 0 0 0.5rem rgb(92 157 255 / 0.6);
   transform: scaleX(var(--fill, 1));
   transform-origin: left;
   transition: transform 0.2s ease;
 }
 
 .meter[data-team='1'] .meterBar::before {
-  background: #ffc6b3;
-  box-shadow: 0 0 0.5rem rgb(255 145 115 / 0.7);
+  background: #ff6b57;
+  box-shadow: 0 0 0.5rem rgb(255 107 87 / 0.6);
   transform-origin: right;
 }
 
@@ -106,7 +106,7 @@
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #ffc6b3;
+  color: #ffb3a6;
 }
 
 .stage {

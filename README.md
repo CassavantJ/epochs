@@ -6,12 +6,16 @@ A lane-war strategy game in the spirit of the old Flash classics, rebuilt from s
 fighters, ranged units and heavies, hold the lane, earn gold and experience from every fight, and
 advance through five eras (Stone Age to Future) before the computer does. Each era brings three
 new units, a base turret and a special power. Easy, Normal and Hard opponents; mouse, touch,
-keyboard or controller; everything is drawn and synthesized in code, with no image or sound files.
+keyboard or controller. The cartoon art (every soldier, mount, machine, base and landscape) and all
+the sound are drawn and synthesized in code, with no image or sound files.
 
 - **Simulation** (`src/game/sim.ts`): the whole battle as data, advanced in fixed steps with a
   seeded random generator, so a game replays exactly. Nothing in it draws or plays sound.
 - **Balance** (`src/game/data.ts`): one base table scaled by each era's power. Overtime from ten
   minutes and sudden death from eighteen keep even matches from stalling.
+- **Art** (`src/game/art/`): cartoon 2D drawn with canvas paths. Soldiers share one jointed body
+  (`people.ts`) dressed per era; heavies, bases and turrets have their own drawings; each era's
+  sky and parallax landscape is in `scenery.ts`. Team colors come from `paint.ts`.
 - **Opponent** (`src/game/ai.ts`): plays by the same commands as you. `balance.test.ts` checks
   that harder beats easier and that games end; for a fuller picture run
   `BALANCE=1 pnpm exec vitest run balance.report --silent=false`.

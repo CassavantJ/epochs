@@ -26,26 +26,6 @@
   color: var(--text-muted);
 }
 
-.eras {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.era {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.2rem 0.8rem 0.2rem 0.3rem;
-  border-radius: 999px;
-  background: var(--surface);
-  box-shadow: inset 0 0 0 1px var(--border);
-  font-size: 0.85rem;
-}
-
 .heading {
   margin: 0 0 0.75rem;
   padding: 0;

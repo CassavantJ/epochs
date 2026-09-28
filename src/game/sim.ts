@@ -132,7 +132,7 @@ export type GameEvent =
       y: number;
       splash: number;
     }
-  | { kind: 'death'; team: Team; x: number; unit: UnitType }
+  | { kind: 'death'; team: Team; x: number; unit: UnitType; id: number }
   | { kind: 'baseHit'; team: Team; damage: number }
   | { kind: 'turret'; team: Team; slot: number }
   | { kind: 'special'; team: Team; special: SpecialType }
@@ -634,7 +634,7 @@ function removeDead(state: GameState) {
     killer.xp += unit.type.cost * KILL_XP;
     killer.stats.kills += 1;
     state.sides[unit.team].stats.losses += 1;
-    state.events.push({ kind: 'death', team: unit.team, x: unit.x, unit: unit.type });
+    state.events.push({ kind: 'death', team: unit.team, x: unit.x, unit: unit.type, id: unit.id });
   }
 }
 

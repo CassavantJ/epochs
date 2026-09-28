@@ -3,10 +3,9 @@ import { useId } from 'react';
 
 import { app } from '../app.config';
 import { DIFFICULTIES, DIFFICULTY_IDS, type DifficultyId } from '../game/ai';
-import { ERAS } from '../game/data';
 import { formatTime, type Settings } from '../settings';
+import { EraBanner } from './EraBanner';
 import styles from './Menu.module.css';
-import { UnitIcon } from './UnitIcon';
 
 interface MenuProps {
   settings: Settings;
@@ -27,14 +26,7 @@ export function Menu({ settings, onDifficulty, onSound, onPlay }: MenuProps) {
         </p>
       </header>
 
-      <ol className={styles.eras} aria-label="The five eras">
-        {ERAS.map((entry) => (
-          <li key={entry.id} className={styles.era}>
-            <UnitIcon type={entry.units.melee} />
-            <span>{entry.name}</span>
-          </li>
-        ))}
-      </ol>
+      <EraBanner />
 
       <fieldset className={styles.difficulty}>
         <legend className={styles.heading}>Opponent</legend>

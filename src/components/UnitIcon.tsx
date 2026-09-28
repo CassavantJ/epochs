@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import type { UnitType } from '../game/data';
-import { drawUnitShape, withPens } from '../game/draw';
+import { drawUnitArt } from '../game/art';
 
 const SIZE = 40;
 
@@ -20,8 +20,13 @@ export function UnitIcon({ type }: { type: UnitType }) {
     const scale = Math.min((SIZE - 6) / (type.height + 8), (SIZE - 6) / (type.size + 26));
     ctx.setTransform(ratio * scale, 0, 0, ratio * scale, (SIZE / 2) * ratio, (SIZE - 3) * ratio);
     ctx.clearRect(-SIZE, -SIZE * 2, SIZE * 4, SIZE * 4);
-    withPens(ctx, 0, (pen) => {
-      drawUnitShape(pen, type, { walk: 0, moving: false, attack: null, time: 0 });
+    drawUnitArt(ctx, type, 0, {
+      walk: 0,
+      moving: false,
+      attack: null,
+      time: 0,
+      variant: 1,
+      flash: 0,
     });
   }, [type]);
 

@@ -12,7 +12,7 @@ import {
 import { DIFFICULTIES, type DifficultyId } from '../game/ai';
 import { EpochsGame } from '../game/controller';
 import { era } from '../game/data';
-import { Backdrop, renderFrame, renderMinimap } from '../game/render';
+import { renderFrame, renderMinimap, Scenery } from '../game/render';
 import { WORLD } from '../game/sim';
 import { createView, type View } from '../game/view';
 import { formatTime } from '../settings';
@@ -156,7 +156,7 @@ export function Game({
     const ctx = canvasRef.current?.getContext('2d');
     const mini = minimapRef.current?.getContext('2d');
     if (!ctx || !mini) return;
-    const backdrop = new Backdrop();
+    const scenery = new Scenery();
     let last = performance.now();
     let frame = 0;
     const loop = (now: number) => {
@@ -169,7 +169,7 @@ export function Game({
       const current = game.view;
       if (current) {
         const { width, height, ratio } = size.current;
-        renderFrame(ctx, game.state, game.visuals, backdrop, {
+        renderFrame(ctx, game.state, game.visuals, scenery, {
           view: current,
           camera: game.camera,
           ratio,
